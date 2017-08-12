@@ -1,0 +1,22 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: url(./images/kamejpg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.cardContainer{
+    height: 600px;
+    width: 600px;
+}
+.cardz{
+    height: 12.5%;
+    width: 100%;
+}
+.cardFront{
+    background: url(./images/card_back.jpg) no-repeat center;
+    background-size: contain;
+    height: 100%;
+    width: 12.5%;
+}
+
