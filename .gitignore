@@ -22,4 +22,5 @@ yarn-error.log*
 
 ./src/images/
 src/images
+/src/images/
 
