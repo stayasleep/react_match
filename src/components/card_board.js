@@ -28,23 +28,25 @@ class CardBoard extends Component{
     }
     componentWillMount(){
         console.log('cardboard will mount');
+        this.generateRandomCards();
     }
 
     generateRandomCards(){
-        const cardArrRandom = this.state.cardArr.slice();
-        //map this
-        cardArrRandom.map((card,index) =>{
-            return(
-                <div>
-
-                </div>
-            )
-        })
-
+        //pics
         const picArray = [One, Two, Three, Four, Five, Six, Seven, Eight, Nine];
         let assignPic = [...picArray,...picArray];
-        let randomNumber = Math.floor(Math.random()*assignPic.length);
-        let thisCards;
+
+        const cardArrRandom = this.state.cardArr.slice(); //avoid direct mutation
+        const cardObj =cardArrRandom.map((card,index) =>{
+            console.log('card is gener',card);
+            let randomNumber = Math.floor(Math.random()*assignPic.length);
+            let thisCardsImage = assignPic[randomNumber];
+            assignPic.splice(randomNumber,1);
+            return(
+                {src: thisCardsImage, flipped: false, matched: false}
+            )
+        });
+        this.setState({cardArr: cardObj});
     }
 
     handleClick(index){
