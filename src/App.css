@@ -27,3 +27,12 @@ body{
     width: 12.5%;
     position: absolute;
 }
+
+.radar{
+    background: url(./images/dbzside.png) no-repeat center;
+    background-size: contain;
+}
+
+.title{
+    background: url(./images/dbzheader.png) no-repeat center/contain;
+}

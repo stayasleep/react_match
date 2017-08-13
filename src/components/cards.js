@@ -14,7 +14,7 @@ export default (props) => {
 
         return(
             <div key={index} className="cardz">
-                <div className="cardBack" style={{background:`url(${props.gameArr[index].src}) no-repeat center`,backgroundSize:"contain"}} ></div>
+                <div className="cardBack" style={{background:`url(${props.gameArr[index].src}) center center / contain no-repeat`}} ></div>
                 <div onClick={handleClick} style={disp} className="cardFront"></div>
             </div>
         )

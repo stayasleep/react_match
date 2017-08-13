@@ -27,21 +27,22 @@ class CardBoard extends Component{
         this.handleResetClick = this.handleResetClick.bind(this);
     }
     componentWillMount(){
-        console.log('cardboard will mount');
         this.generateRandomCards();
+        //this.setState({cardArr: cardObj});
     }
 
     generateRandomCards(){
         //pics
         const picArray = [One, Two, Three, Four, Five, Six, Seven, Eight, Nine];
         let assignPic = [...picArray,...picArray];
+        let assignPics = assignPic.slice();
 
         const cardArrRandom = this.state.cardArr.slice(); //avoid direct mutation
-        const cardObj =cardArrRandom.map((card,index) =>{
+        const cardObj = cardArrRandom.map((card,index) =>{
             console.log('card is gener',card);
-            let randomNumber = Math.floor(Math.random()*assignPic.length);
-            let thisCardsImage = assignPic[randomNumber];
-            assignPic.splice(randomNumber,1);
+            let randomNumber = Math.floor(Math.random()*assignPics.length);
+            let thisCardsImage = assignPics[randomNumber];
+            assignPics.splice(randomNumber,1);
             return(
                 {src: thisCardsImage , flipped: false, matched: false}
             )
@@ -49,7 +50,7 @@ class CardBoard extends Component{
         this.setState({cardArr: cardObj});
     }
 
-    handleClick(index){
+    handleClick (index){
         console.log('card was clicked',index);
         const cardArrState = this.state.cardArr.slice();
 
@@ -69,7 +70,26 @@ class CardBoard extends Component{
             let secondCard = cardArrState[index];
 
             if (firstCard.src ===secondCard.src){
-                //check if we win the game
+                let matched = this.state.matched +1;
+                if (matched === this.state.totalMatches){
+                    console.log('you matched them all');
+                    this.setState({
+                        matched: matched,
+                        clicks: clickCounter += 1,
+                        fFLipped: null,
+                        sFLipped: null,
+                    })
+                } else {
+                    console.log('stilll have more to match');
+                    setTimeout( () => {
+                        this.setState({
+                            matched: matched,
+                            clicks: clickCounter += 1,
+                            fFLipped: null,
+                            sFLipped: null
+                        })
+                    }, 2000);
+                }
             } else {
                //so we didnt match
                 console.log('sec should go from true to now false',secondCard);
@@ -88,27 +108,6 @@ class CardBoard extends Component{
                 }, 2000);
                 console.log('i am waiting');
             }
-            //if it does match something in the array
-            //we increacre the matched counter by 1 and see if they win
-            // let currentMatches = this.state.matched;
-            // currentMatches += 1;
-            // if (this.state.totalMatches===currentMatches){
-            //    //matches are the same, lets update state and win the game
-            //     this.setState({
-            //         fFLipped: null,
-            //         sFLipped: null,
-            //         clicks: clickCounter += 1,
-            //         matched: currentMatches,
-            //     })
-            // }else {
-            //     //they matched but the game isn't over
-            //     this.setState({
-            //         fFLipped: null,
-            //         sFLipped: null,
-            //         clicks: clickCounter += 1,
-            //         matched: currentMatches
-            //     })
-            // }
         }
 
     }
@@ -116,15 +115,17 @@ class CardBoard extends Component{
     handleResetClick(){
         console.log('button reset lifted');
         let gamesCounter = this.state.gamesPlayed;
-        const newCardArr = this.state.cardArr.slice();
+        //const newCardArr = this.state.cardArr.slice();
+        //const cardObj = this.generateRandomCards();
         this.setState({
             fFLipped: null,
             sFLipped: null,
             clicks: 0,
             matched: 0,
             gamesPlayed: gamesCounter+=1,
-            cardArr: newCardArr
-        })
+            cardArr: Array(18).fill(undefined)
+        });
+        this.generateRandomCards();
     }
 
     render(){
@@ -138,14 +139,23 @@ class CardBoard extends Component{
                             clicks={this.state.clicks}
                             matched={this.state.matched}
                             onClick={()=>this.handleResetClick()}
+                            cardsInLine={[this.state.fFLipped,this.state.sFLipped]}
                         />
                     </div>
                     <div className="col-12 col-sm-8">
-                        <Cards
-                            gameArr={this.state.cardArr}
-                            onClick={(ind)=>this.handleClick(ind)}
-                            firstFlipped={this.state.fFLipped}
-                        />
+                        {this.state.fFLipped !== null && this.state.sFLipped !== null ? (
+                            <Cards
+                                gameArr={this.state.cardArr}
+                                onClick={()=>{}}
+                                firstFlipped={this.state.fFLipped}
+                            />
+                            ) : (
+                            <Cards
+                                gameArr={this.state.cardArr}
+                                onClick={(ind) => {this.handleClick(ind)}}
+                                firstFlipped={this.state.fFLipped}
+                            />
+                            )}
                     </div>
                 </div>
             </div>
