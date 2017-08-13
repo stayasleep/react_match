@@ -25,6 +25,7 @@ class CardBoard extends Component{
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleResetClick = this.handleResetClick.bind(this);
+        this.handleRadarTap = this.handleRadarTap.bind(this);
     }
     componentWillMount(){
         this.generateRandomCards();
@@ -32,7 +33,6 @@ class CardBoard extends Component{
     }
 
     generateRandomCards(){
-        //pics
         const picArray = [One, Two, Three, Four, Five, Six, Seven, Eight, Nine];
         let assignPic = [...picArray,...picArray];
         let assignPics = assignPic.slice();
@@ -61,14 +61,16 @@ class CardBoard extends Component{
                 cardArr: cardArrState
             })
         } else {
-            console.log('did it come in second');
             cardArrState[index].flipped = !cardArrState[index].flipped;
             this.setState({sFLipped: index,cardArr: cardArrState });
-            //do they match
+
+            cardArrState[index].matched = !cardArrState[index].matched;//give the matched cards a special tag
+            cardArrState[this.state.fFLipped].matched = !cardArrState[this.state.fFLipped].matched;
+            console.log('matched true',cardArrState);
             let clickCounter = this.state.clicks;
             let firstCard = cardArrState[this.state.fFLipped];
             let secondCard = cardArrState[index];
-
+            //check win conditions
             if (firstCard.src ===secondCard.src){
                 let matched = this.state.matched +1;
                 if (matched === this.state.totalMatches){
@@ -80,13 +82,13 @@ class CardBoard extends Component{
                         sFLipped: null,
                     })
                 } else {
-                    console.log('stilll have more to match');
                     setTimeout( () => {
                         this.setState({
                             matched: matched,
                             clicks: clickCounter += 1,
+                            cardArr: cardArrState,
                             fFLipped: null,
-                            sFLipped: null
+                            sFLipped: null,
                         })
                     }, 2000);
                 }
@@ -113,10 +115,7 @@ class CardBoard extends Component{
     }
 
     handleResetClick(){
-        console.log('button reset lifted');
         let gamesCounter = this.state.gamesPlayed;
-        //const newCardArr = this.state.cardArr.slice();
-        //const cardObj = this.generateRandomCards();
         this.setState({
             fFLipped: null,
             sFLipped: null,
@@ -126,6 +125,31 @@ class CardBoard extends Component{
             cardArr: Array(18).fill(undefined)
         });
         this.generateRandomCards();
+    }
+
+    handleRadarTap(){
+        const cardHints = this.state.cardArr.slice(); //avoid direct mutation
+        let obj = Object.assign({}, cardHints);
+        console.log('oooo',obj);
+        //hint for one card flipped
+        if (this.state.fFLipped !== null){
+            //lets find its soul mate
+            let hintSrc = cardHints[this.state.fFLipped].src;
+            let a=cardHints.map((card,index) => {
+                if (card.src === hintSrc && this.state.fFLipped!==index) return index;
+                // return card.src === hintSrc && this.state.fFLipped!==index ? index;
+            });
+            let c = cardHints.map((card,index)=>{
+                if(card.src===hintSrc){
+                    return {ind: index};
+                }
+            }).filter((card)=>{
+                console.log('inside ',card);
+                return (card) && card.ind !== this.state.fFLipped;
+            });
+            console.log('cc',c);
+            //have to comb thru the array to find another
+        }
     }
 
     render(){
@@ -138,7 +162,8 @@ class CardBoard extends Component{
                             played={this.state.gamesPlayed}
                             clicks={this.state.clicks}
                             matched={this.state.matched}
-                            onClick={()=>this.handleResetClick()}
+                            onClick={()=> this.handleResetClick()}
+                            onTouchTap={ ()=> this.handleRadarTap()}
                             cardsInLine={[this.state.fFLipped,this.state.sFLipped]}
                         />
                     </div>

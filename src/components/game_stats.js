@@ -7,6 +7,9 @@ export default (props) => {
         console.log('cm',clicksMade);
         return clicksMade===0 ?  null:  Math.round((matchesMade/clicksMade)*100).toString()+"%";
     }
+    function handleRadarTap(){
+        props.onTouchTap();
+    }
     function handleResetClick(){
         console.log('button reset clicked',props);
         props.onClick();
@@ -29,7 +32,7 @@ export default (props) => {
                 Attempts:{props.clicks===0 ? null: props.clicks }
             </div>
             <button className="btn btn-secondary resetBtn" disabled={isDisabled} onClick={handleResetClick}>Reset Game</button>
-            <div className="radar"></div>
+            <div className="radar" onClick={handleRadarTap}></div>
             <div className="title"></div>
         </div>
     )

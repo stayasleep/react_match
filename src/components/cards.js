@@ -9,7 +9,6 @@ export default (props) => {
         function handleClick(e){
             //if second card clicked is same as first, dont do anything
             props.firstFlipped === index ? e.preventDefault(): props.onClick(index);
-            console.log('card index',index);
         }
 
         return(
