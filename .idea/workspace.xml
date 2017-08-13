@@ -17,16 +17,20 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57682294">
+    <splitter split-orientation="horizontal" split-proportion="0.2734375">
       <split-first>
         <leaf>
           <file leaf-file-name="card_board.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="941">
-                  <caret line="128" column="24" lean-forward="false" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
+                  <caret line="147" column="24" lean-forward="false" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
+                    <marker date="1502595846880" expanded="true" signature="3684:4012" ph="{...}" />
+                    <marker date="1502595846880" expanded="true" signature="3796:3994" ph="{&quot;matched&quot;: currentMatches...}" />
+                    <marker date="1502595846880" expanded="true" signature="4017:4325" ph="{...}" />
+                    <marker date="1502595846880" expanded="true" signature="4110:4307" ph="{&quot;matched&quot;: currentMatches...}" />
                   </folding>
                 </state>
               </provider>
@@ -55,8 +59,8 @@
           <file leaf-file-name="cards.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/cards.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="40">
-                  <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                <state relative-caret-position="280">
+                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -69,8 +73,8 @@
           <file leaf-file-name="card_board.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="101">
-                  <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+                <state relative-caret-position="-560">
+                  <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
                   </folding>
@@ -334,12 +338,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1502565466733</updated>
-      <workItem from="1502565468447" duration="24231000" />
+      <workItem from="1502565468447" duration="29840000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24231000" />
+    <option name="totallyTimeSpent" value="29840000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3204" height="1732" extended-state="0" />
@@ -522,17 +526,21 @@
     <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="941">
-          <caret line="128" column="24" lean-forward="false" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
+          <caret line="147" column="24" lean-forward="false" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="24" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
+            <marker date="1502595846880" expanded="true" signature="3684:4012" ph="{...}" />
+            <marker date="1502595846880" expanded="true" signature="3796:3994" ph="{&quot;matched&quot;: currentMatches...}" />
+            <marker date="1502595846880" expanded="true" signature="4017:4325" ph="{...}" />
+            <marker date="1502595846880" expanded="true" signature="4110:4307" ph="{&quot;matched&quot;: currentMatches...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/cards.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="280">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>

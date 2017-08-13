@@ -43,7 +43,7 @@ class CardBoard extends Component{
             let thisCardsImage = assignPic[randomNumber];
             assignPic.splice(randomNumber,1);
             return(
-                {src: thisCardsImage, flipped: false, matched: false}
+                {src: thisCardsImage , flipped: false, matched: false}
             )
         });
         this.setState({cardArr: cardObj});
@@ -51,45 +51,64 @@ class CardBoard extends Component{
 
     handleClick(index){
         console.log('card was clicked',index);
-        if (this.state.fFLipped===null){
-            console.log('first set state');
-           this.setState({
-                fFLipped: index
-           })
-        }else{
-            console.log('did it come in second');
-            let secIndex = index;
+        const cardArrState = this.state.cardArr.slice();
 
-            //we know second card spot
-            //we check it against array and see if matches
-            //they dont match, so lets set state
-            let clickCounter = this.state.clicks;
+        if (this.state.fFLipped===null){
+            cardArrState[index].flipped = !cardArrState[index].flipped;
             this.setState({
-                fFLipped: null,
-                sFLipped: null,
-                clicks: clickCounter += 1,
-            });
+                fFLipped: index,
+                cardArr: cardArrState
+            })
+        } else {
+            console.log('did it come in second');
+            cardArrState[index].flipped = !cardArrState[index].flipped;
+            this.setState({sFLipped: index,cardArr: cardArrState });
+            //do they match
+            let clickCounter = this.state.clicks;
+            let firstCard = cardArrState[this.state.fFLipped];
+            let secondCard = cardArrState[index];
+
+            if (firstCard.src ===secondCard.src){
+                //check if we win the game
+            } else {
+               //so we didnt match
+                console.log('sec should go from true to now false',secondCard);
+                //cardArrState[this.state.fFLipped].flipped = !cardArrState[this.state.fFLipped].flipped;
+                //cardArrState[this.state.sFLipped].flipped = !cardArrState[this.state.s]
+                setTimeout( () => {
+                    firstCard.flipped = !firstCard.flipped;
+                    secondCard.flipped = !secondCard.flipped;
+
+                    this.setState({
+                        fFLipped: null,
+                        sFLipped: null,
+                        clicks: clickCounter += 1,
+                        cardArr: cardArrState
+                    })
+                }, 2000);
+                console.log('i am waiting');
+            }
             //if it does match something in the array
             //we increacre the matched counter by 1 and see if they win
-            let currentMatches = this.state.matched;
-            currentMatches += 1;
-            if (this.state.totalMatches===currentMatches){
-               //matches are the same, lets update state and win the game
-                this.setState({
-                    fFLipped: null,
-                    sFLipped: null,
-                    clicks: clickCounter += 1,
-                    matched: currentMatches,
-                })
-            }else {
-                //they matched but the game isn't over
-                this.setState({
-                    fFLipped: null,
-                    sFLipped: null,
-                    clicks: clickCounter += 1,
-                    matched: currentMatches
-                })
-            }
+            // let currentMatches = this.state.matched;
+            // currentMatches += 1;
+            // if (this.state.totalMatches===currentMatches){
+            //    //matches are the same, lets update state and win the game
+            //     this.setState({
+            //         fFLipped: null,
+            //         sFLipped: null,
+            //         clicks: clickCounter += 1,
+            //         matched: currentMatches,
+            //     })
+            // }else {
+            //     //they matched but the game isn't over
+            //     this.setState({
+            //         fFLipped: null,
+            //         sFLipped: null,
+            //         clicks: clickCounter += 1,
+            //         matched: currentMatches
+            //     })
+            // }
         }
 
     }
