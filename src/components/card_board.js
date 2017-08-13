@@ -129,23 +129,37 @@ class CardBoard extends Component{
 
     handleRadarTap(){
         const cardHints = this.state.cardArr.slice(); //avoid direct mutation
-        let obj = Object.assign({}, cardHints);
-        console.log('oooo',obj);
+        let immutableCards = Object.assign([], cardHints); //so you can mutate obj inside without affecting state
+        console.log('oooo',immutableCards);
         //hint for one card flipped
         if (this.state.fFLipped !== null){
-            //lets find its soul mate
             let hintSrc = cardHints[this.state.fFLipped].src;
-  
-            let c = cardHints.map((card,index)=>{
+
+            let c = cardHints.map((card,index) => {
                 if(card.src===hintSrc){
                     return {ind: index};
                 }
-            }).filter((card)=>{
-                console.log('inside ',card);
+            }).filter((card) => {
                 return (card) && card.ind !== this.state.fFLipped;
             });
             console.log('cc',c);
-            //have to comb thru the array to find another
+        } else {
+            //cards that need to be matched
+            let needMatching=immutableCards.filter((cards) => {
+                return !cards.matched;
+            });
+            //generate random number based off the length of the array to use as hintSrc
+            let randomNum = Math.floor(Math.random()*needMatching.length);
+            let hintSrc = needMatching[randomNum].src;
+            //return the two index spots that fit the mold
+            let pairs = immutableCards.map((cards,index) => {
+                if (cards.src === hintSrc ){
+                    return {ind: index};
+                }
+            }).filter((cards) => {
+                return cards !== undefined;
+            });
+            console.log('pairs',pairs);
         }
     }
 

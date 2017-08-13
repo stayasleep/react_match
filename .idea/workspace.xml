@@ -56,8 +56,8 @@
           <file leaf-file-name="card_board.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="273">
-                  <caret line="137" column="2" lean-forward="false" selection-start-line="137" selection-start-column="2" selection-end-line="137" selection-end-column="2" />
+                <state relative-caret-position="221">
+                  <caret line="166" column="43" lean-forward="false" selection-start-line="166" selection-start-column="43" selection-end-line="166" selection-end-column="43" />
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
                   </folding>
@@ -330,12 +330,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1502565466733</updated>
-      <workItem from="1502565468447" duration="48929000" />
+      <workItem from="1502565468447" duration="55545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48929000" />
+    <option name="totallyTimeSpent" value="55545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3204" height="1732" extended-state="0" />
@@ -559,8 +559,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="137" column="2" lean-forward="false" selection-start-line="137" selection-start-column="2" selection-end-line="137" selection-end-column="2" />
+        <state relative-caret-position="221">
+          <caret line="166" column="43" lean-forward="false" selection-start-line="166" selection-start-column="43" selection-end-line="166" selection-end-column="43" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
