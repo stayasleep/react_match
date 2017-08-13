@@ -1,6 +1,15 @@
 import React,{ Component } from 'react';
 import Cards from './cards';
 import GameStats from './game_stats';
+import One from '../images/card_0.png';
+import Two from '../images/card_1.png';
+import Three from '../images/card_2.png';
+import Four from '../images/card_3.png'
+import Five from '../images/card_4.png'
+import Six from '../images/card_5.png'
+import Seven from '../images/card_6.png'
+import Eight from '../images/card_7.png'
+import Nine from '../images/card_8.png';
 
 class CardBoard extends Component{
     constructor(props){
@@ -10,13 +19,34 @@ class CardBoard extends Component{
             matched: 0,
             gamesPlayed: 0,
             clicks: 0,
-            cardArr : Array(18).fill(false),
+            cardArr : Array(18).fill(undefined),
             fFLipped: null,
             sFLipped: null,
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleResetClick = this.handleResetClick.bind(this);
     }
+    componentWillMount(){
+        console.log('cardboard will mount');
+    }
+
+    generateRandomCards(){
+        const cardArrRandom = this.state.cardArr.slice();
+        //map this
+        cardArrRandom.map((card,index) =>{
+            return(
+                <div>
+
+                </div>
+            )
+        })
+
+        const picArray = [One, Two, Three, Four, Five, Six, Seven, Eight, Nine];
+        let assignPic = [...picArray,...picArray];
+        let randomNumber = Math.floor(Math.random()*assignPic.length);
+        let thisCards;
+    }
+
     handleClick(index){
         console.log('card was clicked',index);
         if (this.state.fFLipped===null){

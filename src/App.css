@@ -12,11 +12,18 @@ body{
 .cardz{
     height: 12.5%;
     width: 100%;
+    position: relative;
 }
 .cardFront{
     background: url(./images/card_back.jpg) no-repeat center;
     background-size: contain;
     height: 100%;
     width: 12.5%;
+    position: absolute;
 }
 
+.cardBack{
+    height: 100%;
+    width: 12.5%;
+    position: absolute;
+}
