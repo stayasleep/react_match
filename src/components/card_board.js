@@ -135,10 +135,7 @@ class CardBoard extends Component{
         if (this.state.fFLipped !== null){
             //lets find its soul mate
             let hintSrc = cardHints[this.state.fFLipped].src;
-            let a=cardHints.map((card,index) => {
-                if (card.src === hintSrc && this.state.fFLipped!==index) return index;
-                // return card.src === hintSrc && this.state.fFLipped!==index ? index;
-            });
+  
             let c = cardHints.map((card,index)=>{
                 if(card.src===hintSrc){
                     return {ind: index};
