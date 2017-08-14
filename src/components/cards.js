@@ -13,11 +13,7 @@ export default (props) => {
             //if second card clicked is same as first, dont do anything
             props.firstFlipped === index ? e.preventDefault(): props.onClick(index);
         }
-        function transitionEndHandler(e){
-            console.log('event',e);
-            console.log('event type',e.type);
-            props.onTransitionEnd(e);
-        }
+
         function animationEndHandler(e){
             console.log('animo end',e);
             console.log('animo type',e.type);
