@@ -26,6 +26,7 @@ class CardBoard extends Component{
         this.handleClick = this.handleClick.bind(this);
         this.handleResetClick = this.handleResetClick.bind(this);
         this.handleRadarTap = this.handleRadarTap.bind(this);
+        this.animationEndHandler = this.animationEndHandler.bind(this);
     }
     componentWillMount(){
         this.generateRandomCards();
@@ -163,8 +164,17 @@ class CardBoard extends Component{
         }
     }
 
+    animationEndHandler(event){
+        console.log('animoo over',event);
+    }
+
     render(){
         console.log('cardbaord render',this);
+        // let classN = "cardFront";
+        // if(this.state.fFLipped){
+        //     classN = classN + " animated rotateOut";
+        // }
+
         return(
             <div className="container-fluid">
                 <div className="row">
@@ -184,12 +194,14 @@ class CardBoard extends Component{
                                 gameArr={this.state.cardArr}
                                 onClick={()=>{}}
                                 firstFlipped={this.state.fFLipped}
+                                onAnimationEnd = {() => {this.animationEndHandler()}}
                             />
                             ) : (
                             <Cards
                                 gameArr={this.state.cardArr}
                                 onClick={(ind) => {this.handleClick(ind)}}
                                 firstFlipped={this.state.fFLipped}
+                                onAnimationEnd = {() => {this.animationEndHandler()}}
                             />
                             )}
                     </div>
