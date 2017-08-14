@@ -2,22 +2,22 @@ import React from 'react';
 
 export default (props) => {
 
-    console.log('card',props);
     const cardSummary = props.gameArr.map((card, index)=>{
 
         let disp={};
         let frontClass = "cardFront";
         //props.gameArr[index].flipped ? disp={display:"none"} : disp = {display:"block"};
         props.gameArr[index].flipped ? frontClass = frontClass + " animated rotateOut" : frontClass;
+        props.gameArr[index].hint ? frontClass = frontClass + " animated tada" : frontClass;
         function handleClick(e){
             //if second card clicked is same as first, dont do anything
             props.firstFlipped === index ? e.preventDefault(): props.onClick(index);
         }
 
         function animationEndHandler(e){
-            console.log('animo end',e);
+            console.log('animo end',e.animationName);
             console.log('animo type',e.type);
-            props.onAnimationEnd(e);
+            props.onAnimationEnd(e.animationName, index);
         }
 
         return(

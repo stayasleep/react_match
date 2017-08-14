@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import Cards from './cards';
 import GameStats from './game_stats';
+import GameModal from './modal';
 import One from '../images/card_0.png';
 import Two from '../images/card_1.png';
 import Three from '../images/card_2.png';
@@ -15,6 +16,7 @@ class CardBoard extends Component{
     constructor(props){
         super(props);
         this.state={
+            modalShow: false,
             totalMatches: 9,
             matched: 0,
             gamesPlayed: 0,
@@ -57,6 +59,9 @@ class CardBoard extends Component{
 
         if (this.state.fFLipped===null){
             cardArrState[index].flipped = !cardArrState[index].flipped;
+            //test
+            //let hints  = Object.assign({}, cardArrState[index],{flipped: true, hint:null});
+            //cardArrState[index] = hints;
             this.setState({
                 fFLipped: index,
                 cardArr: cardArrState
@@ -118,6 +123,7 @@ class CardBoard extends Component{
     handleResetClick(){
         let gamesCounter = this.state.gamesPlayed;
         this.setState({
+            modalShow: false,
             fFLipped: null,
             sFLipped: null,
             clicks: 0,
@@ -136,14 +142,19 @@ class CardBoard extends Component{
         if (this.state.fFLipped !== null){
             let hintSrc = cardHints[this.state.fFLipped].src;
 
-            let c = cardHints.map((card,index) => {
+            let cHint = cardHints.map((card,index) => {
                 if(card.src===hintSrc){
                     return {ind: index};
                 }
             }).filter((card) => {
                 return (card) && card.ind !== this.state.fFLipped;
             });
-            console.log('cc',c);
+            console.log('cc',cHint);
+            //we maybe do something with state on second card
+            let positionAt = cHint[0].ind; //position in array card at
+            cardHints[positionAt]={...cardHints[positionAt], hint: true};
+            this.setState({cardArr: cardHints});
+            //test end
         } else {
             //cards that need to be matched
             let needMatching=immutableCards.filter((cards) => {
@@ -159,21 +170,30 @@ class CardBoard extends Component{
                 }
             }).filter((cards) => {
                 return cards !== undefined;
+            }).forEach((cards) => {
+                console.log('for each',cards);
+                let cIndex = cards.ind;
+                immutableCards[cIndex]={...immutableCards[cIndex], hint:true};
             });
-            console.log('pairs',pairs);
+            this.setState({cardArr: immutableCards});//should you use pairs
         }
     }
 
-    animationEndHandler(event){
-        console.log('animoo over',event);
+    animationEndHandler(cssAnimate, index){
+        //remove the hint animations, but leave the matched animations
+        const cardState = this.state.cardArr.slice();
+        if (cssAnimate === "tada"){
+            let {flipped, matched, src} = cardState[index];
+            cardState[index] = {flipped, matched, src};
+            return this.setState({cardArr: cardState});
+        }
+        console.log('not cool',cssAnimate, index);
     }
 
     render(){
         console.log('cardbaord render',this);
-        // let classN = "cardFront";
-        // if(this.state.fFLipped){
-        //     classN = classN + " animated rotateOut";
-        // }
+
+        let showMe = this.state.modalShow===false ? <GameModal/> : null;
 
         return(
             <div className="container-fluid">
@@ -201,10 +221,11 @@ class CardBoard extends Component{
                                 gameArr={this.state.cardArr}
                                 onClick={(ind) => {this.handleClick(ind)}}
                                 firstFlipped={this.state.fFLipped}
-                                onAnimationEnd = {() => {this.animationEndHandler()}}
+                                onAnimationEnd = {(css, index) => {this.animationEndHandler(css,index)}}
                             />
                             )}
                     </div>
+                    {showMe}
                 </div>
             </div>
         )
