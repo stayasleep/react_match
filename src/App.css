@@ -133,3 +133,17 @@ body{
 .tada {
     animation-name: tada;
 }
+
+/*Modal*/
+
+.modal-container {
+   position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+   position: absolute;
+}
+
+.iframe{
+    margin: 0 auto;
+    display: block;
+}

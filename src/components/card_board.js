@@ -16,7 +16,7 @@ class CardBoard extends Component{
     constructor(props){
         super(props);
         this.state={
-            modalShow: false,
+            showModal: false,
             totalMatches: 9,
             matched: 0,
             gamesPlayed: 0,
@@ -29,6 +29,7 @@ class CardBoard extends Component{
         this.handleResetClick = this.handleResetClick.bind(this);
         this.handleRadarTap = this.handleRadarTap.bind(this);
         this.animationEndHandler = this.animationEndHandler.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
     componentWillMount(){
         this.generateRandomCards();
@@ -123,7 +124,7 @@ class CardBoard extends Component{
     handleResetClick(){
         let gamesCounter = this.state.gamesPlayed;
         this.setState({
-            modalShow: false,
+            showModal: false,
             fFLipped: null,
             sFLipped: null,
             clicks: 0,
@@ -190,10 +191,14 @@ class CardBoard extends Component{
         console.log('not cool',cssAnimate, index);
     }
 
+    handleClose(){
+        this.setState({showModal: !this.state.showModal});
+        console.log('handle modal close');
+    }
+
     render(){
         console.log('cardbaord render',this);
 
-        let showMe = this.state.modalShow===false ? <GameModal/> : null;
 
         return(
             <div className="container-fluid">
@@ -225,7 +230,13 @@ class CardBoard extends Component{
                             />
                             )}
                     </div>
-                    {showMe}
+                    <div>
+                        {this.state.showModal===false ? (
+                                <GameModal onClick={() => this.handleClose()} />
+                            ) : (
+                                <div></div>
+                            )}
+                    </div>
                 </div>
             </div>
         )
