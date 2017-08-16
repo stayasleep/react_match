@@ -7,9 +7,9 @@ export default (props) => {
         console.log('cm',clicksMade);
         return clicksMade===0 ?  null:  Math.round((matchesMade/clicksMade)*100).toString()+"%";
     }
-    function handleRadarTap(){
-        props.onTouchTap();
-    }
+    // function handleRadarTap(){
+    //     props.onTouchTap();
+    // }
     function handleResetClick(){
         console.log('button reset clicked',props);
         props.onClick();
@@ -21,21 +21,19 @@ export default (props) => {
     cardA !== null && cardB !== null ? isDisabled=!isDisabled : isDisabled;
 
     return(
-        <div>
-            <div className="headers">
-                <div className="playedContainer col-xs-4">
-                    Games Played: {props.played}
-                </div>
-                <div className="accuracyContainer col-xs-4">
-                    Accuracy: {accuracy(props)}
-                </div>
-                <div className="attemptsContainer col-xs-4">
-                    Attempts: {props.clicks===0 ? null: props.clicks }
-                </div>
+        <div className="headers">
+            <div className="playedContainer col-xs-4 col-sm-3">
+                Games Played: {props.played}
             </div>
+            <div className="accuracyContainer col-xs-4 col-sm-3">
+                Accuracy: {accuracy(props)}
+            </div>
+            <div className="attemptsContainer col-xs-4 col-sm-3">
+                Attempts: {props.clicks===0 ? null: props.clicks }
+            </div>
+            <div className="btnContainer col-sm-3">
                 <button className="btn btn-secondary resetBtn" disabled={isDisabled} onClick={handleResetClick}>Reset Game</button>
-                <div className="radar" onClick={handleRadarTap}></div>
-                <div className="title"></div>
+            </div>
         </div>
     )
 }

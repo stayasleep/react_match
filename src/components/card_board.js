@@ -1,6 +1,8 @@
 import React,{ Component } from 'react';
 import Cards from './cards';
 import GameStats from './game_stats';
+import Radar from './rader';
+import Scouter from './scouter';
 import GameModal from './modal';
 import One from '../images/card_0.png';
 import Two from '../images/card_1.png';
@@ -16,6 +18,7 @@ class CardBoard extends Component{
     constructor(props){
         super(props);
         this.state={
+            power: 0,
             showModal: false,
             totalMatches: 9,
             matched: 0,
@@ -80,18 +83,22 @@ class CardBoard extends Component{
             let secondCard = cardArrState[index];
             //check win conditions
             if (firstCard.src ===secondCard.src){
+                let pLevel = this.state.power;
                 let matched = this.state.matched +1;
                 if (matched === this.state.totalMatches){
                     this.setState({
                         showModal: true,
+                        power: pLevel + 1000,
                         matched: matched,
                         clicks: clickCounter += 1,
                         fFLipped: null,
                         sFLipped: null,
                     });
                 } else {
+                    let pLevel = this.state.power;
                     setTimeout( () => {
                         this.setState({
+                            power: pLevel + 1000,
                             matched: matched,
                             clicks: clickCounter += 1,
                             cardArr: cardArrState,
@@ -127,6 +134,7 @@ class CardBoard extends Component{
             sFLipped: null,
             clicks: 0,
             matched: 0,
+            power: 0,
             gamesPlayed: gamesCounter+=1,
             cardArr: Array(18).fill(undefined)
         });
@@ -200,14 +208,19 @@ class CardBoard extends Component{
         return(
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-12 col-sm-4">
+                    <div className="col-12 col-sm-12">
                         <GameStats
                             played={this.state.gamesPlayed}
                             clicks={this.state.clicks}
                             matched={this.state.matched}
                             onClick={()=> this.handleResetClick()}
-                            onTouchTap={ ()=> this.handleRadarTap()}
+                            //onTouchTap={ ()=> this.handleRadarTap()}
                             cardsInLine={[this.state.fFLipped,this.state.sFLipped]}
+                        />
+                    </div>
+                    <div className="col 12 col-sm-2">
+                        <Radar
+                            onTouchTap={ ()=> this.handleRadarTap()}
                         />
                     </div>
                     <div className="col-12 col-sm-8">
@@ -226,6 +239,11 @@ class CardBoard extends Component{
                                 onAnimationEnd = {(css, index) => {this.animationEndHandler(css,index)}}
                             />
                             )}
+                    </div>
+                    <div className="col-12 col-sm-2">
+                        <Scouter
+                            power={this.state.power}
+                        />
                     </div>
                     <div>
                         {this.state.showModal ? (
