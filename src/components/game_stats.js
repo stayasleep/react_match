@@ -22,18 +22,20 @@ export default (props) => {
 
     return(
         <div>
-            <div className="playedContainer">
-                Games Played:{props.played}
+            <div className="headers">
+                <div className="playedContainer col-xs-4">
+                    Games Played: {props.played}
+                </div>
+                <div className="accuracyContainer col-xs-4">
+                    Accuracy: {accuracy(props)}
+                </div>
+                <div className="attemptsContainer col-xs-4">
+                    Attempts: {props.clicks===0 ? null: props.clicks }
+                </div>
             </div>
-            <div className="accuracyContainer">
-                Accuracy:{accuracy(props)}
-            </div>
-            <div className="attemptsContainer">
-                Attempts:{props.clicks===0 ? null: props.clicks }
-            </div>
-            <button className="btn btn-secondary resetBtn" disabled={isDisabled} onClick={handleResetClick}>Reset Game</button>
-            <div className="radar" onClick={handleRadarTap}></div>
-            <div className="title"></div>
+                <button className="btn btn-secondary resetBtn" disabled={isDisabled} onClick={handleResetClick}>Reset Game</button>
+                <div className="radar" onClick={handleRadarTap}></div>
+                <div className="title"></div>
         </div>
     )
 }

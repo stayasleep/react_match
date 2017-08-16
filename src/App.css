@@ -7,7 +7,7 @@ body{
 
 .cardContainer{
     height: 600px;
-    width: 600px;
+    /*width: 600px;*/
 }
 .cardz{
     height: 12.5%;
@@ -140,10 +140,35 @@ body{
    position: relative;
 }
 .modal-container .modal, .modal-container .modal-backdrop {
-   position: absolute;
+   position: absolute !important;
 }
 
 .iframe{
-    margin: 0 auto;
-    display: block;
+    /*margin: 0 auto;*/
+    /*display: block;*/
+    width: auto;
+}
+
+@media screen and (max-width: 480px){
+    .headers{
+        color: #fff;
+        text-transform: uppercase;
+        font-size:1em;
+        height: 60px;
+    }
+    /*.headers{*/
+        /*position: absolute;*/
+        /*color: #FFFFFF;*/
+        /*text-transform: uppercase;*/
+        /*font-size: 1.5em;*/
+        /*display: -webkit-flex;*/
+        /*display: flex;*/
+        /*-webkit-align-items: center;*/
+        /*align-items: center;*/
+        /*height: 60px;*/
+    /*}*/
+    /*.headers div{*/
+        /*!*display: inline-block;*!*/
+        /*text-align: center;*/
+    /*}*/
 }

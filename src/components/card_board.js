@@ -33,7 +33,6 @@ class CardBoard extends Component{
     }
     componentWillMount(){
         this.generateRandomCards();
-        //this.setState({cardArr: cardObj});
     }
 
     generateRandomCards(){
@@ -56,16 +55,19 @@ class CardBoard extends Component{
 
     handleClick (index){
         console.log('card was clicked',index);
+        let firstGame = this.state.gamesPlayed;
         const cardArrState = this.state.cardArr.slice();
 
         if (this.state.fFLipped===null){
+            firstGame === 0 ? firstGame += 1 : firstGame;
             cardArrState[index].flipped = !cardArrState[index].flipped;
             //test
             //let hints  = Object.assign({}, cardArrState[index],{flipped: true, hint:null});
             //cardArrState[index] = hints;
             this.setState({
                 fFLipped: index,
-                cardArr: cardArrState
+                cardArr: cardArrState,
+                gamesPlayed: firstGame
             })
         } else {
             cardArrState[index].flipped = !cardArrState[index].flipped;
@@ -73,7 +75,6 @@ class CardBoard extends Component{
 
             cardArrState[index].matched = !cardArrState[index].matched;//give the matched cards a special tag
             cardArrState[this.state.fFLipped].matched = !cardArrState[this.state.fFLipped].matched;
-            console.log('matched true',cardArrState);
             let clickCounter = this.state.clicks;
             let firstCard = cardArrState[this.state.fFLipped];
             let secondCard = cardArrState[index];
@@ -81,13 +82,13 @@ class CardBoard extends Component{
             if (firstCard.src ===secondCard.src){
                 let matched = this.state.matched +1;
                 if (matched === this.state.totalMatches){
-                    console.log('you matched them all');
                     this.setState({
+                        showModal: true,
                         matched: matched,
                         clicks: clickCounter += 1,
                         fFLipped: null,
                         sFLipped: null,
-                    })
+                    });
                 } else {
                     setTimeout( () => {
                         this.setState({
@@ -101,9 +102,6 @@ class CardBoard extends Component{
                 }
             } else {
                //so we didnt match
-                console.log('sec should go from true to now false',secondCard);
-                //cardArrState[this.state.fFLipped].flipped = !cardArrState[this.state.fFLipped].flipped;
-                //cardArrState[this.state.sFLipped].flipped = !cardArrState[this.state.s]
                 setTimeout( () => {
                     firstCard.flipped = !firstCard.flipped;
                     secondCard.flipped = !secondCard.flipped;
@@ -155,7 +153,6 @@ class CardBoard extends Component{
             let positionAt = cHint[0].ind; //position in array card at
             cardHints[positionAt]={...cardHints[positionAt], hint: true};
             this.setState({cardArr: cardHints});
-            //test end
         } else {
             //cards that need to be matched
             let needMatching=immutableCards.filter((cards) => {
@@ -191,9 +188,9 @@ class CardBoard extends Component{
         console.log('not cool',cssAnimate, index);
     }
 
+
     handleClose(){
         this.setState({showModal: !this.state.showModal});
-        console.log('handle modal close');
     }
 
     render(){
@@ -231,8 +228,8 @@ class CardBoard extends Component{
                             )}
                     </div>
                     <div>
-                        {this.state.showModal===false ? (
-                                <GameModal onClick={() => this.handleClose()} />
+                        {this.state.showModal ? (
+                                <GameModal show={true} onClick={() => this.handleClose()} onReset={()=>this.handleResetClick()} />
                             ) : (
                                 <div></div>
                             )}
