@@ -8,14 +8,19 @@ class Scouter extends Component{
             currentPower: 0
         }
     }
+    //you let startFrom = initialStateValue
+    //you let endAt = props.power being passed in
+    //so it should start 0-----> 1000 end
+    //start at 1000 ----> 2000 end
+    //1000 : 100,200,300,400...1000
+    //2000: 1100, 1200,1300...1900,2000
+    //need to go up 100 each time
 
     powerUp(){
         if(this.state.currentPower !== this.props.power) {
-            let startAt = this.state.currentPower;
-            let endAt = this.props.power - startAt;
             this.setState((prevState, props) => {
                 return {
-                    currentPower: prevState.currentPower + ((props.power - prevState.currentPower) / 10),
+                    currentPower: prevState.currentPower + 100,
                 }
             })
         }
@@ -34,18 +39,6 @@ class Scouter extends Component{
         clearInterval(this.powerUp);
     }
 
-    // count(){
-    //     if(this.props.power === 0){
-    //         this.startAt = 0;
-    //         let endAt = this.props.power;
-    //     }else{
-    //         let endAt = this.props.power;
-    //         this.startAt -= this.startAt - endAt;
-    //     }
-    //     setInterval(()=>{
-    //
-    //     },100);
-    // }
 
     render(){
 
