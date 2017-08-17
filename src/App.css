@@ -32,6 +32,7 @@ body{
     float: left;
     height: 130px;
     width: 100px;
+    cursor: pointer;
 }
 .cardFront{
     background: url(./images/card_back.jpg) no-repeat center;
@@ -51,6 +52,7 @@ body{
     background: url(./images/dbzside.png) no-repeat center;
     background-size: contain;
     height: 300px;
+    cursor: pointer;
 }
 .scouter{
     background: url(./images/scout.png) no-repeat center;
