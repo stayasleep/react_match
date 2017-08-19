@@ -22,16 +22,16 @@ export default (props) => {
 
     return(
         <div className="headers">
-            <div className="playedContainer col-xs-4 col-sm-3">
+            <div className="playedContainer col-xs-3 col-sm-3">
                 Games Played: {props.played}
             </div>
-            <div className="accuracyContainer col-xs-4 col-sm-3">
+            <div className="accuracyContainer col-xs-3 col-sm-3">
                 Accuracy: {accuracy(props)}
             </div>
-            <div className="attemptsContainer col-xs-4 col-sm-3">
+            <div className="attemptsContainer col-xs-3 col-sm-3">
                 Attempts: {props.clicks===0 ? null: props.clicks }
             </div>
-            <div className="btnContainer col-sm-3">
+            <div className="btnContainer col-xs-3 col-sm-3">
                 <button className="btn btn-secondary resetBtn" disabled={isDisabled} onClick={handleResetClick}>Reset Game</button>
             </div>
         </div>

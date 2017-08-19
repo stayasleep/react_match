@@ -76,13 +76,16 @@ class CardBoard extends Component{
             cardArrState[index].flipped = !cardArrState[index].flipped;
             this.setState({sFLipped: index,cardArr: cardArrState });
 
-            cardArrState[index].matched = !cardArrState[index].matched;//give the matched cards a special tag
-            cardArrState[this.state.fFLipped].matched = !cardArrState[this.state.fFLipped].matched;
+            // cardArrState[index].matched = !cardArrState[index].matched;//give the matched cards a special tag
+            // cardArrState[this.state.fFLipped].matched = !cardArrState[this.state.fFLipped].matched;
             let clickCounter = this.state.clicks;
             let firstCard = cardArrState[this.state.fFLipped];
             let secondCard = cardArrState[index];
             //check win conditions
             if (firstCard.src ===secondCard.src){
+                cardArrState[index].matched = !cardArrState[index].matched;//give the matched cards a special tag
+                cardArrState[this.state.fFLipped].matched = !cardArrState[this.state.fFLipped].matched;
+
                 let pLevel = this.state.power;
                 let matched = this.state.matched +1;
                 if (matched === this.state.totalMatches){
@@ -146,6 +149,7 @@ class CardBoard extends Component{
         let immutableCards = Object.assign([], cardHints); //so you can mutate obj inside without affecting state
         console.log('oooo',immutableCards);
         //hint for one card flipped
+        if (this.state.matched === 9) return null; //no actions after modal closes and game not reset
         if (this.state.fFLipped !== null){
             let hintSrc = cardHints[this.state.fFLipped].src;
 
@@ -218,12 +222,16 @@ class CardBoard extends Component{
                             cardsInLine={[this.state.fFLipped,this.state.sFLipped]}
                         />
                     </div>
-                    <div className="col 12 col-sm-2">
+                    <div className="col-xs-6 col-sm-2">
+                        <span className="hints">Need a Hint?</span>
                         <Radar
+                            cardsInLine={[this.state.fFLipped, this.state.sFLipped]}
                             onTouchTap={ ()=> this.handleRadarTap()}
+                            onAnimationStart={()=> this.animationStartRadar.bind(this)()}
+                            gameArr={this.state.cardArr}
                         />
                     </div>
-                    <div className="col-12 col-sm-8">
+                    <div className="col-xs-12 col-sm-8">
                         {this.state.fFLipped !== null && this.state.sFLipped !== null ? (
                             <Cards
                                 gameArr={this.state.cardArr}
@@ -240,7 +248,8 @@ class CardBoard extends Component{
                             />
                             )}
                     </div>
-                    <div className="col-12 col-sm-2">
+                    <div className="col-xs-6 col-sm-2">
+                        <span className="highScore">Current Score:</span>
                         <Scouter
                             power={this.state.power}
                         />
