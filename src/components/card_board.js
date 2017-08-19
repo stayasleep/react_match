@@ -222,16 +222,7 @@ class CardBoard extends Component{
                             cardsInLine={[this.state.fFLipped,this.state.sFLipped]}
                         />
                     </div>
-                    <div className="col-xs-6 col-sm-2">
-                        <span className="hints">Need a Hint?</span>
-                        <Radar
-                            cardsInLine={[this.state.fFLipped, this.state.sFLipped]}
-                            onTouchTap={ ()=> this.handleRadarTap()}
-                            onAnimationStart={()=> this.animationStartRadar.bind(this)()}
-                            gameArr={this.state.cardArr}
-                        />
-                    </div>
-                    <div className="col-xs-12 col-sm-8">
+                    <div className="col-xs-12 col-sm-8 col-sm-push-2">
                         {this.state.fFLipped !== null && this.state.sFLipped !== null ? (
                             <Cards
                                 gameArr={this.state.cardArr}
@@ -247,6 +238,15 @@ class CardBoard extends Component{
                                 onAnimationEnd = {(css, index) => {this.animationEndHandler(css,index)}}
                             />
                             )}
+                    </div>
+                    <div className="col-xs-6 col-sm-2 col-sm-pull-8">
+                        <span className="hints">Need a Hint?</span>
+                        <Radar
+                            cardsInLine={[this.state.fFLipped, this.state.sFLipped]}
+                            onTouchTap={ ()=> this.handleRadarTap()}
+                            onAnimationStart={()=> this.animationStartRadar.bind(this)()}
+                            gameArr={this.state.cardArr}
+                        />
                     </div>
                     <div className="col-xs-6 col-sm-2">
                         <span className="highScore">Current Score:</span>
