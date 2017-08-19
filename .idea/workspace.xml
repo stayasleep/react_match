@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d86898a-40e4-4007-84d2-247645988e7b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card_board.js" afterPath="$PROJECT_DIR$/src/components/card_board.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/game_stats.js" afterPath="$PROJECT_DIR$/src/components/game_stats.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/modal.js" afterPath="$PROJECT_DIR$/src/components/modal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/rader.js" afterPath="$PROJECT_DIR$/src/components/rader.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,14 +21,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46870968">
+    <splitter split-orientation="horizontal" split-proportion="0.52870965">
       <split-first>
         <leaf>
           <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/App.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="911">
-                  <caret line="215" column="33" lean-forward="false" selection-start-line="215" selection-start-column="33" selection-end-line="215" selection-end-column="33" />
+                <state relative-caret-position="794">
+                  <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -33,8 +37,8 @@
           <file leaf-file-name="game_stats.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/game_stats.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1042">
-                  <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+                <state relative-caret-position="1084">
+                  <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
                   <folding />
                 </state>
               </provider>
@@ -53,8 +57,8 @@
           <file leaf-file-name="modal.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/modal.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+                <state relative-caret-position="-926">
+                  <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -76,21 +80,21 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="rader.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="rader.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/rader.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="975">
-                  <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+                <state relative-caret-position="157">
+                  <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="card_board.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="card_board.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1268">
-                  <caret line="241" column="67" lean-forward="false" selection-start-line="241" selection-start-column="67" selection-end-line="241" selection-end-column="67" />
+                <state relative-caret-position="992">
+                  <caret line="250" column="62" lean-forward="false" selection-start-line="250" selection-start-column="62" selection-end-line="250" selection-end-column="62" />
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
                   </folding>
@@ -154,12 +158,12 @@
         <option value="$PROJECT_DIR$/README.old.md" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/images/.gitignore" />
-        <option value="$PROJECT_DIR$/src/components/modal.js" />
-        <option value="$PROJECT_DIR$/src/components/game_stats.js" />
         <option value="$PROJECT_DIR$/src/components/cards.js" />
         <option value="$PROJECT_DIR$/src/components/scouter.js" />
-        <option value="$PROJECT_DIR$/src/components/rader.js" />
         <option value="$PROJECT_DIR$/src/components/card_board.js" />
+        <option value="$PROJECT_DIR$/src/components/rader.js" />
+        <option value="$PROJECT_DIR$/src/components/game_stats.js" />
+        <option value="$PROJECT_DIR$/src/components/modal.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
       </list>
     </option>
@@ -388,7 +392,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137333000" />
+    <option name="totallyTimeSpent" value="140473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -695,16 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/cards.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
@@ -721,36 +715,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/game_stats.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1042">
-          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/rader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1268">
-          <caret line="241" column="67" lean-forward="false" selection-start-line="241" selection-start-column="67" selection-end-line="241" selection-end-column="67" />
+        <state relative-caret-position="992">
+          <caret line="250" column="62" lean-forward="false" selection-start-line="250" selection-start-column="62" selection-end-line="250" selection-end-column="62" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/rader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/game_stats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1084">
+          <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-926">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="911">
-          <caret line="215" column="33" lean-forward="false" selection-start-line="215" selection-start-column="33" selection-end-line="215" selection-end-column="33" />
+        <state relative-caret-position="794">
+          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding />
         </state>
       </provider>

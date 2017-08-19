@@ -1,11 +1,8 @@
 import React from 'react';
 
-
 export default (props) => {
-
     //if the radar is still animating...then we should not allow
     //double radar taps.
-
     function handleRadarTap(e){
        // props.onTouchTap();
         let cardArray = props.gameArr;
@@ -23,7 +20,6 @@ export default (props) => {
     function animationStartRadar(e){
 
     }
-
     return(
         <div className="radarContainer">
             <div className="radar" onClick={handleRadarTap}></div>

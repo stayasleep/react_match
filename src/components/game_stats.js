@@ -32,7 +32,7 @@ export default (props) => {
                 Attempts: {props.clicks===0 ? null: props.clicks }
             </div>
             <div className="btnContainer col-xs-3 col-sm-3">
-                <button className="btn btn-secondary resetBtn" disabled={isDisabled} onClick={handleResetClick}>Reset Game</button>
+                <button className="btn btn-secondary btn-lg resetBtn" disabled={isDisabled} onClick={handleResetClick}>Reset Game</button>
             </div>
         </div>
     )

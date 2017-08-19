@@ -9,7 +9,6 @@ class GameModal extends React.Component{
         this.props.onReset();
     }
 
-
     render() {
 
         return (

@@ -24,6 +24,7 @@ body{
     color: white !important;
     font-weight: 700;
     border-color: black;
+    outline: none !important;
 }
 .resetBtn:hover, .resetBtn:active, .resetBtn:focus{
     background: white;
@@ -32,6 +33,7 @@ body{
 
 .cardContainer{
     display: inline-block;
+    margin: 2em 0;
 }
 .cardz{
     position: relative;

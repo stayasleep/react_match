@@ -222,7 +222,7 @@ class CardBoard extends Component{
                             cardsInLine={[this.state.fFLipped,this.state.sFLipped]}
                         />
                     </div>
-                    <div className="col-xs-12 col-sm-8 col-sm-push-2">
+                    <div className="col-xs-12 col-sm-8 col-sm-push-2 col-lg-6 col-lg-push-3">
                         {this.state.fFLipped !== null && this.state.sFLipped !== null ? (
                             <Cards
                                 gameArr={this.state.cardArr}
@@ -239,7 +239,7 @@ class CardBoard extends Component{
                             />
                             )}
                     </div>
-                    <div className="col-xs-6 col-sm-2 col-sm-pull-8">
+                    <div className="col-xs-6 col-sm-2 col-sm-pull-8 col-lg-3 col-lg-pull-6">
                         <span className="hints">Need a Hint?</span>
                         <Radar
                             cardsInLine={[this.state.fFLipped, this.state.sFLipped]}
@@ -248,7 +248,7 @@ class CardBoard extends Component{
                             gameArr={this.state.cardArr}
                         />
                     </div>
-                    <div className="col-xs-6 col-sm-2">
+                    <div className="col-xs-6 col-sm-2 col-lg-3">
                         <span className="highScore">Current Score:</span>
                         <Scouter
                             power={this.state.power}
