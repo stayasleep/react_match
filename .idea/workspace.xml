@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d86898a-40e4-4007-84d2-247645988e7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card_board.js" afterPath="$PROJECT_DIR$/src/components/card_board.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/rader.js" afterPath="$PROJECT_DIR$/src/components/rader.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,10 +17,10 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5816129">
+    <splitter split-orientation="horizontal" split-proportion="0.5916129">
       <split-first>
         <leaf>
-          <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/App.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="365">
@@ -44,9 +43,23 @@
           <file leaf-file-name="cards.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/cards.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="524">
+                <state relative-caret-position="284">
                   <caret line="14" column="68" lean-forward="false" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="card_board.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="633">
+                  <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#40#0" expanded="true" />
+                    <marker date="1503217641600" expanded="true" signature="8221:11068" ph="{...}" />
+                    <marker date="1503217641600" expanded="true" signature="8298:11052" ph="&lt;div/&gt;" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -77,24 +90,12 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="rader.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="rader.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/rader.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="157">
-                  <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+                <state relative-caret-position="276">
+                  <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="card_board.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="486">
-                  <caret line="242" column="53" lean-forward="false" selection-start-line="242" selection-start-column="53" selection-end-line="242" selection-end-column="53" />
-                  <folding>
-                    <element signature="e#0#40#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -157,11 +158,11 @@
         <option value="$PROJECT_DIR$/src/images/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/cards.js" />
         <option value="$PROJECT_DIR$/src/components/scouter.js" />
-        <option value="$PROJECT_DIR$/src/components/rader.js" />
         <option value="$PROJECT_DIR$/src/components/game_stats.js" />
         <option value="$PROJECT_DIR$/src/components/modal.js" />
-        <option value="$PROJECT_DIR$/src/components/card_board.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/components/rader.js" />
+        <option value="$PROJECT_DIR$/src/components/card_board.js" />
       </list>
     </option>
   </component>
@@ -407,7 +408,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145001000" />
+    <option name="totallyTimeSpent" value="147973000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -573,6 +574,8 @@
           <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
+            <marker date="1503217641600" expanded="true" signature="8221:11068" ph="{...}" />
+            <marker date="1503217641600" expanded="true" signature="8298:11052" ph="&lt;div/&gt;" />
           </folding>
         </state>
       </provider>
@@ -680,26 +683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/cards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="14" column="68" lean-forward="false" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/scouter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="821">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/rader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -752,21 +739,39 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="242" column="53" lean-forward="false" selection-start-line="242" selection-start-column="53" selection-end-line="242" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="14" column="68" lean-forward="false" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/rader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <marker date="1503217641600" expanded="true" signature="8221:11068" ph="{...}" />
+            <marker date="1503217641600" expanded="true" signature="8298:11052" ph="&lt;div/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>

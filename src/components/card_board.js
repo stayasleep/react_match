@@ -126,7 +126,6 @@ class CardBoard extends Component{
                 console.log('i am waiting');
             }
         }
-
     }
 
     handleResetClick(){
@@ -145,6 +144,7 @@ class CardBoard extends Component{
     }
 
     handleRadarTap(){
+        this.animatingHints = true;
         const cardHints = this.state.cardArr.slice(); //avoid direct mutation
         let immutableCards = Object.assign([], cardHints); //so you can mutate obj inside without affecting state
         console.log('oooo',immutableCards);
@@ -195,11 +195,11 @@ class CardBoard extends Component{
         if (cssAnimate === "tada"){
             let {flipped, matched, src} = cardState[index];
             cardState[index] = {flipped, matched, src};
+            this.animatingHints = false;
             return this.setState({cardArr: cardState});
         }
         console.log('not cool',cssAnimate, index);
     }
-
 
     handleClose(){
         this.setState({showModal: !this.state.showModal});
@@ -207,7 +207,6 @@ class CardBoard extends Component{
 
     render(){
         console.log('cardbaord render',this);
-
 
         return(
             <div className="container-fluid">
@@ -244,8 +243,7 @@ class CardBoard extends Component{
                         <Radar
                             cardsInLine={[this.state.fFLipped, this.state.sFLipped]}
                             onTouchTap={ ()=> this.handleRadarTap()}
-                            onAnimationStart={()=> this.animationStartRadar.bind(this)()}
-                            gameArr={this.state.cardArr}
+                            animatingHints={this.animatingHints}
                         />
                     </div>
                     <div className="col-xs-6 col-sm-2 col-lg-3">
