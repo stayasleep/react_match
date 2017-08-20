@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d86898a-40e4-4007-84d2-247645988e7b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card_board.js" afterPath="$PROJECT_DIR$/src/components/card_board.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/rader.js" afterPath="$PROJECT_DIR$/src/components/rader.js" />
     </list>
@@ -53,12 +54,10 @@
           <file leaf-file-name="card_board.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="633">
-                  <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+                <state relative-caret-position="360">
+                  <caret line="129" column="35" lean-forward="false" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
-                    <marker date="1503217641600" expanded="true" signature="8221:11068" ph="{...}" />
-                    <marker date="1503217641600" expanded="true" signature="8298:11052" ph="&lt;div/&gt;" />
                   </folding>
                 </state>
               </provider>
@@ -93,8 +92,8 @@
           <file leaf-file-name="rader.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/rader.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                <state relative-caret-position="552">
+                  <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -408,7 +407,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147973000" />
+    <option name="totallyTimeSpent" value="149770000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -574,8 +573,6 @@
           <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-            <marker date="1503217641600" expanded="true" signature="8221:11068" ph="{...}" />
-            <marker date="1503217641600" expanded="true" signature="8298:11052" ph="&lt;div/&gt;" />
           </folding>
         </state>
       </provider>
@@ -757,20 +754,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/rader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="552">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/card_board.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="129" column="35" lean-forward="false" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-            <marker date="1503217641600" expanded="true" signature="8221:11068" ph="{...}" />
-            <marker date="1503217641600" expanded="true" signature="8298:11052" ph="&lt;div/&gt;" />
           </folding>
         </state>
       </provider>

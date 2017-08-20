@@ -10,8 +10,7 @@ export default (props) => {
         console.log('eradar targ', e.target);
         if (props.cardsInLine[0] !== null && props.cardsInLine[1] !== null) {
             return null;
-        }else if(props.animatingHints){
-            console.log('tru chains');
+        }else if (props.animatingHints){
             e.preventDefault();
         }else{
             props.onTouchTap();

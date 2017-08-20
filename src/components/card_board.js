@@ -43,7 +43,7 @@ class CardBoard extends Component{
         let assignPic = [...picArray,...picArray];
         let assignPics = assignPic.slice();
 
-        const cardArrRandom = this.state.cardArr.slice(); //avoid direct mutation
+        const cardArrRandom = this.state.cardArr.slice();
         const cardObj = cardArrRandom.map((card,index) =>{
             console.log('card is gener',card);
             let randomNumber = Math.floor(Math.random()*assignPics.length);
@@ -64,7 +64,6 @@ class CardBoard extends Component{
         if (this.state.fFLipped===null){
             firstGame === 0 ? firstGame += 1 : firstGame;
             cardArrState[index].flipped = !cardArrState[index].flipped;
-            //test
             //let hints  = Object.assign({}, cardArrState[index],{flipped: true, hint:null});
             //cardArrState[index] = hints;
             this.setState({
@@ -111,11 +110,9 @@ class CardBoard extends Component{
                     }, 2000);
                 }
             } else {
-               //so we didnt match
                 setTimeout( () => {
                     firstCard.flipped = !firstCard.flipped;
                     secondCard.flipped = !secondCard.flipped;
-
                     this.setState({
                         fFLipped: null,
                         sFLipped: null,
@@ -130,6 +127,7 @@ class CardBoard extends Component{
 
     handleResetClick(){
         let gamesCounter = this.state.gamesPlayed;
+        this.animatingHints = null;
         this.setState({
             showModal: false,
             fFLipped: null,
@@ -145,7 +143,7 @@ class CardBoard extends Component{
 
     handleRadarTap(){
         this.animatingHints = true;
-        const cardHints = this.state.cardArr.slice(); //avoid direct mutation
+        const cardHints = this.state.cardArr.slice();
         let immutableCards = Object.assign([], cardHints); //so you can mutate obj inside without affecting state
         console.log('oooo',immutableCards);
         //hint for one card flipped
@@ -161,7 +159,6 @@ class CardBoard extends Component{
                 return (card) && card.ind !== this.state.fFLipped;
             });
             console.log('cc',cHint);
-            //we maybe do something with state on second card
             let positionAt = cHint[0].ind; //position in array card at
             cardHints[positionAt]={...cardHints[positionAt], hint: true};
             this.setState({cardArr: cardHints});
@@ -181,7 +178,6 @@ class CardBoard extends Component{
             }).filter((cards) => {
                 return cards !== undefined;
             }).forEach((cards) => {
-                console.log('for each',cards);
                 let cIndex = cards.ind;
                 immutableCards[cIndex]={...immutableCards[cIndex], hint:true};
             });
