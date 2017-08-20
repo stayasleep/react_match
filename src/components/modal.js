@@ -8,7 +8,6 @@ class GameModal extends React.Component{
     reset(){
         this.props.onReset();
     }
-
     render() {
 
         return (
@@ -17,14 +16,14 @@ class GameModal extends React.Component{
                     <Modal.Header closeButton>
                         <Modal.Title>Congrats Z Warrior</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body bsClass="mBody">
                         <h4>You Win!</h4>
                         <iframe height="315" src="https://www.youtube.com/embed/SiMHTK15Pik?autoplay=1" frameBorder="0" allowFullScreen></iframe>
 
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button bsStyle="danger" onClick={this.close.bind(this)}>Close</Button>
-                        <Button bsStyle="primary" onClick={this.reset.bind(this)}>Play Again</Button>
+                        <Button bsStyle="outline-danger" onClick={this.close.bind(this)}>Close</Button>
+                        <Button bsStyle="outline-dark" onClick={this.reset.bind(this)}>Play Again</Button>
                     </Modal.Footer>
                 </Modal>
             </div>

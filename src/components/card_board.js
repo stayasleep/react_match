@@ -45,7 +45,6 @@ class CardBoard extends Component{
 
         const cardArrRandom = this.state.cardArr.slice();
         const cardObj = cardArrRandom.map((card,index) =>{
-            console.log('card is gener',card);
             let randomNumber = Math.floor(Math.random()*assignPics.length);
             let thisCardsImage = assignPics[randomNumber];
             assignPics.splice(randomNumber,1);
@@ -57,15 +56,16 @@ class CardBoard extends Component{
     }
 
     handleClick (index){
-        console.log('card was clicked',index);
-        let firstGame = this.state.gamesPlayed;
         const cardArrState = this.state.cardArr.slice();
 
         if (this.state.fFLipped===null){
+            let firstGame = this.state.gamesPlayed;
+
             firstGame === 0 ? firstGame += 1 : firstGame;
             cardArrState[index].flipped = !cardArrState[index].flipped;
             //let hints  = Object.assign({}, cardArrState[index],{flipped: true, hint:null});
             //cardArrState[index] = hints;
+            debugger;
             this.setState({
                 fFLipped: index,
                 cardArr: cardArrState,
@@ -126,7 +126,6 @@ class CardBoard extends Component{
     }
 
     handleResetClick(){
-        let gamesCounter = this.state.gamesPlayed;
         this.animatingHints = null;
         this.setState({
             showModal: false,
@@ -135,7 +134,7 @@ class CardBoard extends Component{
             clicks: 0,
             matched: 0,
             power: 0,
-            gamesPlayed: gamesCounter+=1,
+            gamesPlayed: this.state.gamesPlayed += 1,
             cardArr: Array(18).fill(undefined)
         });
         this.generateRandomCards();
@@ -248,8 +247,8 @@ class CardBoard extends Component{
                             power={this.state.power}
                         />
                     </div>
-                    <div>
-                        {this.state.showModal ? (
+                    <div className="col-xs-10">
+                        {!this.state.showModal ? (
                                 <GameModal show={true} onClick={() => this.handleClose()} onReset={()=>this.handleResetClick()} />
                             ) : (
                                 <div></div>
