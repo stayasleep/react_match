@@ -18,12 +18,11 @@ class GameModal extends React.Component{
                     </Modal.Header>
                     <Modal.Body bsClass="mBody">
                         <h4>You Win!</h4>
-                        <iframe height="315" src="https://www.youtube.com/embed/SiMHTK15Pik?autoplay=1" frameBorder="0" allowFullScreen></iframe>
-
+                        <iframe title="dbzOverNine" height="315" src="https://www.youtube.com/embed/SiMHTK15Pik?autoplay=1" frameBorder="0" allowFullScreen></iframe>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button bsStyle="outline-danger" onClick={this.close.bind(this)}>Close</Button>
-                        <Button bsStyle="outline-dark" onClick={this.reset.bind(this)}>Play Again</Button>
+                        <Button bsClass="btn btn-outline-danger" onClick={this.close.bind(this)}>Close</Button>
+                        <Button bsClass="btn btn-outline-dark" onClick={this.reset.bind(this)}>Play Again</Button>
                     </Modal.Footer>
                 </Modal>
             </div>

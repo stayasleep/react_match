@@ -127,6 +127,7 @@ class CardBoard extends Component{
 
     handleResetClick(){
         this.animatingHints = null;
+        let played = this.state.gamesPlayed;
         this.setState({
             showModal: false,
             fFLipped: null,
@@ -134,7 +135,7 @@ class CardBoard extends Component{
             clicks: 0,
             matched: 0,
             power: 0,
-            gamesPlayed: this.state.gamesPlayed += 1,
+            gamesPlayed: played += 1,
             cardArr: Array(18).fill(undefined)
         });
         this.generateRandomCards();
@@ -248,7 +249,7 @@ class CardBoard extends Component{
                         />
                     </div>
                     <div className="col-xs-10">
-                        {!this.state.showModal ? (
+                        {this.state.showModal ? (
                                 <GameModal show={true} onClick={() => this.handleClose()} onReset={()=>this.handleResetClick()} />
                             ) : (
                                 <div></div>

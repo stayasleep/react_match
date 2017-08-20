@@ -4,9 +4,10 @@ export default (props) => {
 
     const cardSummary = props.gameArr.map((card, index)=>{
 
-        let disp={};
         let frontClass = "cardFront";
+        // eslint-disable-next-line
         props.gameArr[index].flipped ? frontClass = frontClass + " animated rotateOut" : frontClass;
+        // eslint-disable-next-line
         props.gameArr[index].hint ? frontClass = frontClass + " animated tada" : frontClass;
         function handleClick(e){
             //if second card clicked is same as first, dont do anything
@@ -32,7 +33,7 @@ export default (props) => {
         return(
             <div key={index} className="cardz">
                 <div className="cardBack" style={{background:`url(${props.gameArr[index].src}) center center / contain no-repeat`}} ></div>
-                <div onAnimationEnd={animationEndHandler} onAnimationStart={animationStartHandler} onClick={handleClick} style={disp} className={frontClass}></div>
+                <div onAnimationEnd={animationEndHandler} onAnimationStart={animationStartHandler} onClick={handleClick} className={frontClass}></div>
             </div>
         )
     });

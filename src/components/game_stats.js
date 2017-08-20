@@ -3,13 +3,10 @@ import React from 'react';
 export default (props) => {
     function accuracy(props){
         let matchesMade = props.matched;
-        let clicksMade = props.clicks;
-        console.log('cm',clicksMade);
-        return clicksMade===0 ?  null:  Math.round((matchesMade/clicksMade)*100).toString()+"%";
+        let attempts = props.clicks;
+        return attempts === 0 ?  null:  Math.round((matchesMade/attempts)*100).toString()+"%";
     }
-    // function handleRadarTap(){
-    //     props.onTouchTap();
-    // }
+
     function handleResetClick(){
         console.log('button reset clicked',props);
         props.onClick();
@@ -18,6 +15,7 @@ export default (props) => {
     //if both cards are being checked...we disable reset action until afterwards
     let [cardA,cardB]=props.cardsInLine;
     let isDisabled = false;
+    // eslint-disable-next-line
     cardA !== null && cardB !== null ? isDisabled=!isDisabled : isDisabled;
 
     return(
