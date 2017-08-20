@@ -8,10 +8,8 @@ export default (props) => {
     }
 
     function handleResetClick(){
-        console.log('button reset clicked',props);
         props.onClick();
     }
-    console.log('butn props',props);
     //if both cards are being checked...we disable reset action until afterwards
     let [cardA,cardB]=props.cardsInLine;
     let isDisabled = false;

@@ -171,7 +171,7 @@ class CardBoard extends Component{
             let randomNum = Math.floor(Math.random()*needMatching.length);
             let hintSrc = needMatching[randomNum].src;
             //return the two index spots that fit the mold
-            let pairs = immutableCards.map((cards,index) => {
+            immutableCards.map((cards,index) => {
                 if (cards.src === hintSrc ){
                     return {ind: index};
                 }
@@ -181,7 +181,7 @@ class CardBoard extends Component{
                 let cIndex = cards.ind;
                 immutableCards[cIndex]={...immutableCards[cIndex], hint:true};
             });
-            this.setState({cardArr: immutableCards});//should you use pairs
+            this.setState({cardArr: immutableCards});
         }
     }
 
@@ -213,7 +213,6 @@ class CardBoard extends Component{
                             clicks={this.state.clicks}
                             matched={this.state.matched}
                             onClick={()=> this.handleResetClick()}
-                            //onTouchTap={ ()=> this.handleRadarTap()}
                             cardsInLine={[this.state.fFLipped,this.state.sFLipped]}
                         />
                     </div>
@@ -232,7 +231,8 @@ class CardBoard extends Component{
                                 firstFlipped={this.state.fFLipped}
                                 onAnimationEnd = {(css, index) => {this.animationEndHandler(css,index)}}
                             />
-                            )}
+                            )
+                        }
                     </div>
                     <div className="col-xs-6 col-sm-2 col-sm-pull-8 col-lg-3 col-lg-pull-6">
                         <div className="hintContainer"><span className="hints">Need a Hint?</span></div>
@@ -253,7 +253,8 @@ class CardBoard extends Component{
                                 <GameModal show={true} onClick={() => this.handleClose()} onReset={()=>this.handleResetClick()} />
                             ) : (
                                 <div></div>
-                            )}
+                            )
+                        }
                     </div>
                 </div>
             </div>
