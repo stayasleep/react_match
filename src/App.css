@@ -33,7 +33,7 @@ body{
 
 .cardContainer{
     display: inline-block;
-    margin: 2em 0;
+    margin-top: 2em;
 }
 .cardz{
     position: relative;
@@ -60,6 +60,8 @@ body{
     position: absolute;
     top: 1em;
     font-size: 1.5em;
+    font-weight: 700;
+    color: black;
     left: 0;
     right: 0;
     width: 100%;
@@ -70,7 +72,7 @@ body{
     background: url(./images/scout.png) no-repeat center;
     background-size: contain;
     height: 200px;
-    /*position: relative;*/
+    /*padding-top: 100%;*/
     display: flex;
     width: 100%;
 }
@@ -91,11 +93,24 @@ body{
 .title{
     background: url(./images/dbzheader.png) no-repeat center/contain;
 }
+
+.hintContainer {
+    margin-top: 2em;
+    text-align: center;
+}
+span.hints {
+    font-size: 2em;
+    font-weight: 700;
+    font-family: "digital-7", Monteserrat, Arial, sans-serif;
+    color: black;
+}
 .radar{
     background: url(./images/dbzside.png) no-repeat center;
     background-size: contain;
-    height: 300px;
+    /*height: 300px;*/
     cursor: pointer;
+    padding-top: 102.99%;
+    width: 100%;
 }
 /*bounce effect on radar*/
 .radar:hover{

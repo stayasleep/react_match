@@ -240,7 +240,7 @@ class CardBoard extends Component{
                             )}
                     </div>
                     <div className="col-xs-6 col-sm-2 col-sm-pull-8 col-lg-3 col-lg-pull-6">
-                        <span className="hints">Need a Hint?</span>
+                        <div className="hintContainer"><span className="hints">Need a Hint?</span></div>
                         <Radar
                             cardsInLine={[this.state.fFLipped, this.state.sFLipped]}
                             onTouchTap={ ()=> this.handleRadarTap()}
