@@ -30,14 +30,13 @@ class Scouter extends Component{
         clearInterval(this.powerUp);
     }
 
-
     render(){
-
+        let powerLevel = this.state.currentPower === 9000 ? 9001: this.state.currentPower;
 
         return(
             <div className="scouter" style={{background: `url(${logo}) center center / contain no-repeat`}}>
                 <div className="scouterText count">
-                    {this.state.currentPower}
+                    {powerLevel}
                 </div>
             </div>
         )

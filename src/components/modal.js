@@ -30,27 +30,4 @@ class GameModal extends React.Component{
     }
 }
 
-
-// const GameModal = (props) => (
-//
-//     <div className="static-modal">
-//         <Modal.Dialog>
-//             <Modal.Header>
-//                 <Modal.Title id="contained-modal-title">Congrats Z Warrior</Modal.Title>
-//             </Modal.Header>
-//
-//             <Modal.Body>
-//                 <h3>You win!</h3>
-//                 <iframe height="315" src="https://www.youtube.com/embed/SiMHTK15Pik?autoplay=1" frameBorder="0" allowFullScreen></iframe>
-//             </Modal.Body>
-//
-//             <Modal.Footer>
-//                 <Button bsStyle="danger" onClick={()=> props.onClick()}>Close</Button>
-//                 <Button bsStyle="primary" onClick={() => props.onReset()}>Play Again</Button>
-//             </Modal.Footer>
-//
-//         </Modal.Dialog>
-//     </div>
-// );
-
 export default GameModal;

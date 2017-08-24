@@ -89,13 +89,14 @@ class CardBoard extends Component{
                 let matched = this.state.matched +1;
                 if (matched === this.state.totalMatches){
                     this.setState({
-                        showModal: true,
+                        // showModal: true,
                         power: pLevel + 1000,
                         matched: matched,
                         clicks: clickCounter += 1,
                         fFLipped: null,
                         sFLipped: null,
                     });
+                    setTimeout(()=> {this.setState({showModal: true})},1000);
                 } else {
                     let pLevel = this.state.power;
                     setTimeout( () => {
@@ -120,7 +121,6 @@ class CardBoard extends Component{
                         cardArr: cardArrState
                     })
                 }, 2000);
-                console.log('i am waiting');
             }
         }
     }
@@ -145,7 +145,6 @@ class CardBoard extends Component{
         this.animatingHints = true;
         const cardHints = this.state.cardArr.slice();
         let immutableCards = Object.assign([], cardHints); //so you can mutate obj inside without affecting state
-        console.log('oooo',immutableCards);
         //hint for one card flipped
         if (this.state.matched === 9) return null; //no actions after modal closes and game not reset
         if (this.state.fFLipped !== null){
@@ -158,7 +157,6 @@ class CardBoard extends Component{
             }).filter((card) => {
                 return (card) && card.ind !== this.state.fFLipped;
             });
-            console.log('cc',cHint);
             let positionAt = cHint[0].ind; //position in array card at
             cardHints[positionAt]={...cardHints[positionAt], hint: true};
             this.setState({cardArr: cardHints});
@@ -194,7 +192,6 @@ class CardBoard extends Component{
             this.animatingHints = false;
             return this.setState({cardArr: cardState});
         }
-        console.log('not cool',cssAnimate, index);
     }
 
     handleClose(){
@@ -202,7 +199,6 @@ class CardBoard extends Component{
     }
 
     render(){
-        console.log('cardbaord render',this);
 
         return(
             <div className="container-fluid">
