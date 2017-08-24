@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../images/dbzside.png';
 
 export default (props) => {
     //if the radar is still animating...then we should not allow
@@ -19,7 +20,7 @@ export default (props) => {
 
     return(
         <div className="radarContainer">
-            <div className="radar" onClick={handleRadarTap}></div>
+            <div className="radar" onClick={handleRadarTap} style={{background: `url(${logo}) no-repeat center/contain`}}></div>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 body{
     padding: 0;
     margin: 0;
-    background: url(./images/kamejpg.jpg) no-repeat center;
+    background: url(images/kamejpg.jpg) no-repeat center;
     background-size: cover;
     font-family: "digital-7", Monteserrat, Arial, sans-serif;
 }
@@ -41,8 +41,8 @@ body{
     width: 100px;
 }
 .cardFront{
-    background: url(./images/card_back.jpg) no-repeat center;
-    background-size: contain;
+    /*background: url(images/card_back.jpg) no-repeat center;*/
+    /*background-size: contain;*/
     height: 100%;
     width: 100%;
     position: absolute;
@@ -66,8 +66,8 @@ body{
     justify-content: center;
 }
 .scouter{
-    background: url(./images/scout.png) no-repeat center;
-    background-size: contain;
+    /*background: url(images/scout.png) no-repeat center;*/
+    /*background-size: contain;*/
     height: 200px;
     /*padding-top: 100%;*/
     display: flex;
@@ -86,7 +86,7 @@ body{
     text-align: center;
 }
 .wLogo{
-    background: url(./images/dbzheader.png) no-repeat center/contain;
+    /*background: url(images/dbzheader.png) no-repeat center/contain;*/
     padding-top: 44.93%;
 }
 .align-self-center{
@@ -103,7 +103,7 @@ span.hints {
     color: black;
 }
 .radar{
-    background: url(./images/dbzside.png) no-repeat center;
+    /*background: url(images/dbzside.png) no-repeat center;*/
     background-size: contain;
     /*height: 300px;*/
     cursor: pointer;

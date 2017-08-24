@@ -1,4 +1,5 @@
 import React from 'react';
+import back from '../images/card_back.jpg';
 
 export default (props) => {
 
@@ -33,7 +34,7 @@ export default (props) => {
         return(
             <div key={index} className="cardz">
                 <div className="cardBack" style={{background:`url(${props.gameArr[index].src}) center center / contain no-repeat`}} ></div>
-                <div onAnimationEnd={animationEndHandler} onAnimationStart={animationStartHandler} onClick={handleClick} className={frontClass}></div>
+                <div style={{background:`url(${back}) center center / contain no-repeat`}} onAnimationEnd={animationEndHandler} onAnimationStart={animationStartHandler} onClick={handleClick} className={frontClass}></div>
             </div>
         )
     });

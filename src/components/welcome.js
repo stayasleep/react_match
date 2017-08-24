@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import logo from '../images/dbzheader.png';
 
 export default (props) =>{
 
@@ -8,7 +9,7 @@ export default (props) =>{
     }
 
     return(
-        <div className="container">
+        <div className="container" style={{background: `url(${logo}) no-repeat center/contain`}}>
             <div className="row">
                 <div className="wLogo"/>
                 <div className="col align-self-center">

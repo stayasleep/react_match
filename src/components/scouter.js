@@ -1,4 +1,5 @@
 import React,{ Component } from 'react';
+import logo from '../images/scout.png'
 
 
 class Scouter extends Component{
@@ -34,7 +35,7 @@ class Scouter extends Component{
 
 
         return(
-            <div className="scouter">
+            <div className="scouter" style={{background: `url(${logo}) center center / contain no-repeat`}}>
                 <div className="scouterText count">
                     {this.state.currentPower}
                 </div>
