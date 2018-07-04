@@ -3,6 +3,10 @@
 # dependencies
 /node_modules
 
+# stuff
+.idea/
+.idea
+
 # testing
 /coverage
 
